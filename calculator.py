@@ -5,7 +5,7 @@ while True:
     try:
         a = float(input())
         operator = input()
-        assert operator in ('+', '-', '/', '*', '**')
+        assert operator in ('+', '-', '/', '*', '**', '//', '%')
         b = float(input())
         expression = f'{a}{operator}{b}'
         float_res = eval(expression)
