@@ -25,6 +25,24 @@ def print_available_units(units: dict):
         print(f'{unit_type}: {" ".join(units[unit_type])}')
 
 
+class Value:
+    """
+    Represents value of particular measurement unit.
+    """
+    def __init__(self, number: float, unit: str):
+        self.number = number
+        self.unit = unit
+
+    def __add__(self, other):
+        return type(self)(self.number + other.number, self.unit)
+
+    def __sub__(self, other):
+        return type(self)(self.number - other.number, self.unit)
+
+    def __repr__(self):
+        return '{}{}'.format(self.number, self.unit)
+
+
 class Converter:
     """
     Provides convertion and calculation of units.
@@ -47,24 +65,6 @@ class Converter:
             return value1 + converted_val2
         elif operator == '-':
             return value1 - converted_val2
-
-
-class Value:
-    """
-    Represents value of particular measurement unit.
-    """
-    def __init__(self, number: float, unit: str):
-        self.number = number
-        self.unit = unit
-
-    def __add__(self, other: Value):
-        return type(self)(self.number + other.number, self.unit)
-
-    def __sub__(self, other: Value):
-        return type(self)(self.number - other.number, self.unit)
-
-    def __repr__(self):
-        return '{}{}'.format(self.number, self.unit)
 
 
 print(HELP_MESSAGE)
