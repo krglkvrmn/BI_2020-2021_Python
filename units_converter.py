@@ -1,7 +1,7 @@
 import re
 import json
 
-
+# Read units and their ratios
 with open('units.json') as file:
     UNITS = json.load(file)
 
@@ -20,12 +20,15 @@ HELP_MESSAGE = """To convert units type 'cvt' command.
                   Press 'Ctrl+C' to exit."""
 
 
-def print_available_units(units):
+def print_available_units(units: dict):
     for unit_type in units:
         print(f'{unit_type}: {" ".join(units[unit_type])}')
 
 
 class Converter:
+    """
+    Provides convertion and calculation of units.
+    """
     UNITS = UNITS
 
     def __init__(self, unit_type):
@@ -46,6 +49,9 @@ class Converter:
 
 
 class Value:
+    """
+    Represents value of particular measurement unit.
+    """
     def __init__(self, number, unit):
         self.number = number
         self.unit = unit
@@ -69,6 +75,7 @@ while True:
     elif user_command == 'available':
         print_available_units(Converter.UNITS)
         continue
+    # Check if all arguments are presented.
     try:
         arguments = re.findall(r'(\w*) (\w*) (\d*\.?\d*)(\w*) ' +
                                r'((?:\-\>)|(?:\+|\-)) (\d*\.?\d*)(\w*)',
@@ -78,12 +85,14 @@ while True:
         continue
 
     operation, unit_type, num1, unit, operator, num2, target_unit = arguments
+    # Check if unit type is presented
     try:
         converter = Converter(unit_type)
     except KeyError:
         print(f"Invalid unit type: {unit_type}")
         continue
 
+    # Check if unit is presented
     if not (unit in converter.UNITS[unit_type] and
             target_unit in converter.UNITS[unit_type]):
         print("Unit does not exists!")
@@ -94,6 +103,7 @@ while True:
         if operator != '->':
             print(f'Invalid operator {operator} for cvt!')
             continue
+        # Prettify output
         print(f'{value1} = {converter.convert(value1, target_unit)}')
     elif operation == 'calc':
         if operator not in ('+', '-'):
@@ -101,6 +111,7 @@ while True:
             continue
         value2 = Value(float(num2), target_unit)
         result = converter.calculate(value1, value2, operator)
+        # Prettify output
         print('{} {} {} = {}'.format(value1, operator, value2, result))
     else:
         print(f"Operation {operation} does not exists!")
