@@ -31,16 +31,17 @@ class Converter:
     """
     UNITS = UNITS
 
-    def __init__(self, unit_type):
+    def __init__(self, unit_type: str):
         self.unit_type = unit_type
         self.unit_ref = self.UNITS[self.unit_type]
 
-    def convert(self, value, target_unit):
+    def convert(self, value: Value, target_unit: str) -> Value:
         basic_unit_value = value.number * self.unit_ref[value.unit]
         target_unit_value = basic_unit_value / self.unit_ref[target_unit]
         return Value(target_unit_value, target_unit)
 
-    def calculate(self, value1, value2, operator):
+    def calculate(self, value1: Value, value2: Value, operator: str):
+        # Convert value2 to unit of value1 so you can add them.
         converted_val2 = self.convert(value2, value1.unit)
         if operator == '+':
             return value1 + converted_val2
@@ -52,14 +53,14 @@ class Value:
     """
     Represents value of particular measurement unit.
     """
-    def __init__(self, number, unit):
+    def __init__(self, number: float, unit: str):
         self.number = number
         self.unit = unit
 
-    def __add__(self, other):
+    def __add__(self, other: Value):
         return type(self)(self.number + other.number, self.unit)
 
-    def __sub__(self, other):
+    def __sub__(self, other: Value):
         return type(self)(self.number - other.number, self.unit)
 
     def __repr__(self):
