@@ -22,10 +22,13 @@ HELP_MESSAGE = """To convert units type 'cvt' command.
 
 def print_available_units(units):
     for unit_type in units:
-        print(f'{unit_type}: {" ".join(units[unit_type])}')
+        print(f'{unit_type}: {",".join(units[unit_type])}')
 
 
 class Converter:
+    """
+    I made merge conflict by adding docstring here.
+    """
     UNITS = UNITS
 
     def __init__(self, unit_type):
@@ -61,6 +64,8 @@ class Value:
 
 
 print(HELP_MESSAGE)
+# Endless loop for convenient interaction.
+# By the way, this comment will not evoke merge conflict.
 while True:
     user_command = input('>')
     if user_command == 'help':
