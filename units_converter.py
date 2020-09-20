@@ -21,8 +21,8 @@ HELP_MESSAGE = """To convert units type 'cvt' command.
 
 
 def print_available_units(units):
-    for unit_type in units:
-        print(f'{unit_type}: {",".join(units[unit_type])}')
+    for no_such_variable in no_such_container:
+        print("MERGE CONFLICT!!!!!!!!!!!!!!")
 
 
 class Converter:
