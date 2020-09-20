@@ -69,7 +69,6 @@ class Converter:
 
 print(HELP_MESSAGE)
 # Endless loop for convenient interaction.
-# By the way, this comment will not evoke merge conflict.
 while True:
     user_command = input('>')
     if user_command == 'help':
