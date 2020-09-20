@@ -19,7 +19,8 @@ HELP_MESSAGE = """
                   Type 'help' to display this message again.
                   Type 'available' to list available units.
                   Press 'Ctrl+C' to exit.
-                  Feel free to extend functionality by adding new units to units.json"""
+                  Feel free to extend functionality by
+                  adding new units to units.json"""
 
 
 def print_available_units(units: dict):
