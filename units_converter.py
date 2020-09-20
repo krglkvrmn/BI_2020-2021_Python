@@ -5,7 +5,8 @@ import json
 with open('units.json') as file:
     UNITS = json.load(file)
 
-HELP_MESSAGE = """To convert units type 'cvt' command.
+HELP_MESSAGE = """
+                  To convert units type 'cvt' command.
                   Type 'calc' to add or substract different units.
                   Then specify unit type, for example length, weight, etc.
                   Write expression using '->' operator for convertion and
@@ -17,7 +18,8 @@ HELP_MESSAGE = """To convert units type 'cvt' command.
                       calc weight 4lb + 10oz
                   Type 'help' to display this message again.
                   Type 'available' to list available units.
-                  Press 'Ctrl+C' to exit."""
+                  Press 'Ctrl+C' to exit.
+                  Feel free to extend functionality by adding new units to units.json"""
 
 
 def print_available_units(units: dict):
@@ -70,6 +72,7 @@ class Converter:
 print(HELP_MESSAGE)
 # Endless loop for convenient interaction.
 while True:
+    # UI block
     user_command = input('>')
     if user_command == 'help':
         print(HELP_MESSAGE)
@@ -100,13 +103,15 @@ while True:
         print("Unit does not exists!")
         continue
 
+    # Calculation block
     value1 = Value(float(num1), unit)
     if operation == 'cvt':
         if operator != '->':
             print(f'Invalid operator {operator} for cvt!')
             continue
         # Prettify output
-        print(f'{value1} = {converter.convert(value1, target_unit)}')
+        converted_val = converter.convert(value1, target_unit)
+        print(f'{value1} = {converted_val}')
     elif operation == 'calc':
         if operator not in ('+', '-'):
             print(f'Invalid operator {operator} for calc!')
