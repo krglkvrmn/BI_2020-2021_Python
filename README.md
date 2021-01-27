@@ -2,17 +2,17 @@
 
 Set of simple programs which utilize generation of pseudo-random numbers.
 
-```html
-<p float="left">
-```
+#### Serpinsky carpet
 
-```html
-  <img src="gifs/Carpet.gif"/>
-  <img src="gifs/Triangle.gif"/> 
-  <img src="gifs/random_walk.gif"/>
-```
+![](gifs/Carpet.gif) 
 
-</p>
+#### Serpinsky triangle
+
+![](gifs/Triangle.gif)
+
+### Random walk
+
+![](gifs/random_walk.gif)
 
 ## Usage
 
