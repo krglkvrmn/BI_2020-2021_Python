@@ -2,7 +2,17 @@
 
 Set of simple programs which utilize generation of pseudo-random numbers.
 
-![](gifs/Carpet.gif) ![](gifs/Triangle.gif)![](gifs/random_walk.gif)
+```html
+<p float="left">
+```
+
+```html
+  <img src="gifs/Carpet.gif"/>
+  <img src="gifs/Triangle.gif"/> 
+  <img src="gifs/random_walk.gif"/>
+```
+
+</p>
 
 ## Usage
 
