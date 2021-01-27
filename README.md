@@ -28,7 +28,7 @@ Generation of [Sierpinski triangle](https://en.wikipedia.org/wiki/Sierpi%C5%84sk
 
 ![](gifs/Triangle.gif)
 
-### Random walk (random_walk.py)
+#### Random walk (random_walk.py)
 
 Simulation of  2D random walk.
 
