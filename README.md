@@ -38,11 +38,12 @@ Simulation of  2D random walk.
 
 ### Download source code and install dependencies
 
-`git clone https://github.com/krglkvrmn/BI_2020-2021_Python.git`
-
-`git checkout random_homework`
-
-`pip install -r requirements.txt`
+```bash
+git clone https://github.com/krglkvrmn/BI_2020-2021_Python.git
+cd BI_2020-2021_Python
+git checkout random_homework
+pip install -r requirements.txt
+```
 
 ### Launch script
 
