@@ -53,4 +53,3 @@ text = ax.text(3, -10, "Iteration: 0")
 anim = FuncAnimation(fig, func=update, frames=range(1, duration, speed),
                      fargs=(scatter, text), blit=True, interval=1)
 plt.show()
-
