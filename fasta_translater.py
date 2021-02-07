@@ -9,4 +9,3 @@ if __name__ == "__main__":
     path = input("Enter path to nucleotide fasta file: ")
     for prot in translated_fasta_reader(path):
         print(prot)
-
