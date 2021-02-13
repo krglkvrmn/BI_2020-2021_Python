@@ -8,4 +8,5 @@ def generate_dna(size, prefix=""):
 
 
 if __name__ == "__main__":
-    print(list(generate_dna(4)))
+    n = int(input("Enter sequence length: "))
+    print(*generate_dna(n))

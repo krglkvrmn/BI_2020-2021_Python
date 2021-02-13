@@ -6,6 +6,4 @@ def translated_fasta_reader(path, codon_table="Standard"):
 
 
 if __name__ == "__main__":
-    path = input("Enter path to nucleotide fasta file: ")
-    for prot in translated_fasta_reader(path):
-        print(prot)
+    print(list(translated_fasta_reader("example_fasta.fna")))
