@@ -38,8 +38,7 @@ Note that "Pie" and "Bar" are drawn separately and then joined together with ext
 
 ```bash
 git clone https://github.com/krglkvrmn/BI_2020-2021_Python.git
-cd BI_2020-2021_Python
-git checkout visualisation_homework
+cd BI_2020-2021_Python/visualization_homework
 pip install -r requirements.txt
 ```
 
