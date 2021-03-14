@@ -1,5 +1,5 @@
 class Sequence:
-    """Class represents biological sequence"""
+    """Class represents biological sequence."""
     def __init__(self, seq):
         if isinstance(seq, str):
             self._seq = seq.upper()
