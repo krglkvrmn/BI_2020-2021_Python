@@ -23,7 +23,6 @@ HELP_MESSAGE = """
                   adding new units to units.json"""
 
 
-
 def print_available_units(units: dict):
     for unit_type in units:
         print(f'{unit_type}: {" ".join(units[unit_type])}')
