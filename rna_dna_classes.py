@@ -40,7 +40,7 @@ class Sequence:
         return hash(self._seq)
 
     def __eq__(self, other):
-        return self._seq == other._seq:
+        return self._seq == other._seq
 
     def __add__(self, other):
         return type(self)(self._seq + other._seq)
