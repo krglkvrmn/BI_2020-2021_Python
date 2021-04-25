@@ -48,7 +48,7 @@ class BaseOperationsTest(unittest.TestCase):
         for str1, str2, equals in test_set:
             self.assertEqual(DNA(str1) == DNA(str2), equals)
 
-    def test_RNA_equals_DNA(self):
+    def test_RNA_equals_RNA(self):
         test_set = [("AUGC", "AUGC", True), ("AAAA", "AAAA", True), ("AUCGAC", "AUCGAC", True),
                     ("CAUC", "ACUC", False), ("AUUCG", "UUA", False), ("A", "UAA", False)]
         for str1, str2, equals in test_set:
@@ -198,4 +198,3 @@ class DNA_tanscribe_test(unittest.TestCase):
         test_set = [("A", "U"), ("T", "A"), ("ATGCATGC", "UACGUACG")]
         for string, tr_string in test_set:
             self.assertEqual(DNA(string).transcribe(), RNA(tr_string))
-
