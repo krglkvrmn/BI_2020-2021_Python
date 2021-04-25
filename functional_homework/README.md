@@ -35,3 +35,9 @@ git clone https://github.com/krglkvrmn/BI_2020-2021_Python.git
 cd BI_2020-2021_Python/functional_homework
 pip install -r requirements.txt
 ```
+
+### Launch script
+
+```bash
+python <script_name>
+```
