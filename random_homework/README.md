@@ -40,8 +40,7 @@ Simulation of  2D random walk.
 
 ```bash
 git clone https://github.com/krglkvrmn/BI_2020-2021_Python.git
-cd BI_2020-2021_Python
-git checkout random_homework
+cd BI_2020-2021_Python/random_homework
 pip install -r requirements.txt
 ```
 
