@@ -1,6 +1,8 @@
 class Sequence:
     """Class represents biological sequence."""
     def __init__(self, seq):
+        if not len(seq):
+            raise RuntimeError("Sequence must have at least 1 element")
         if isinstance(seq, str):
             self._seq = seq.upper()
         else:
@@ -37,12 +39,16 @@ class Sequence:
         return len(self._seq)
 
     def __hash__(self):
-        return hash(self._seq)
+        return hash(self._seq) + 1
 
     def __eq__(self, other):
+        if not isinstance(self, type(other)):
+            raise TypeError(f"Objects of classes {type(self)} and {type(other)} cannot be compared")
         return self._seq == other._seq
 
     def __add__(self, other):
+        if not isinstance(self, type(other)):
+            raise TypeError(f"Objects of classes {type(self)} and {type(other)} cannot be concatenated")
         return type(self)(self._seq + other._seq)
 
     def __str__(self):
