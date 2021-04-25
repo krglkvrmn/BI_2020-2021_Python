@@ -81,9 +81,9 @@ class TestFastqfiltrator(unittest.TestCase):
         with open(file) as fastq_file:
             while True:
                 seq_name = fastq_file.readline()
-                seq = fastq_file.readline()
-                comment = fastq_file.readline()
-                quality = fastq_file.readline()
+                fastq_file.readline()
+                fastq_file.readline()
+                fastq_file.readline()
 
                 if not seq_name:
                     break
