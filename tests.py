@@ -1,6 +1,5 @@
 import unittest
-import random
-from rna_dna_classes import *
+from rna_dna_classes import DNA, RNA
 
 
 class CreateRNA(unittest.TestCase):
