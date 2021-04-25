@@ -19,7 +19,7 @@ Example:
 
 *translated_fasta_reader(path, codon_table)* is a generator that reads fasta record from nucleotide fasta file and yields corresponding amino-acid Seq object.
 
-Example:
+**Example:**
 
 ```python
 >>> list(translated_fasta_reader("example.fna"))
